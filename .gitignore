@@ -171,3 +171,5 @@ scratch*
 *secrets*.json
 magic-zoomcamp
 *.json
+
+my_creds.json
