@@ -31,4 +31,11 @@ hourly_aq_unioned as (
     select * from riverside_data
 )
 
-select * from hourly_aq_unioned
+select
+    city,
+    datetime,
+    {{ get_rush_hour(hour_day) }} as rush_hour,
+    month_val,
+    parameter,
+    value
+from hourly_aq_unioned

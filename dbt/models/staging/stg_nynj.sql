@@ -24,6 +24,7 @@ renamed as (
         "NY_NJ" as city,
         datetime,
         extract(HOUR FROM datetime) as hour_day,
+        extract(MONTH FROM datetime) as month_val,
         parameter,
         value
 

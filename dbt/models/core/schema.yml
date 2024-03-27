@@ -6,3 +6,5 @@ sources:
     schema: air_quality_dataset
     tables:
       - name: combined_hourly
+      - name: dim_transit
+      - name: monthly_avg
