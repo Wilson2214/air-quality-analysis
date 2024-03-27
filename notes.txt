@@ -1,0 +1,48 @@
+Pre-requisites
+- Docker Installed
+- Python Installed
+- git clone REPO..., cd into repo
+
+Create Virtual Environment
+- python3 -m venv air-quality-venv
+- . air-quality-venv/bin/activate
+
+GCloud
+- Create an account and a new project
+- Record Project ID: air-quality-analysis-418420
+- Create a service account with role Owner (over-permissioned)
+- Manage Keys > Add Key > Create New Key > JSON download file
+- Copy file into home directory of air-quality-analysis project and rename my_creds.json
+
+Terraform (will create bucket for each city (4 in total) and the big query table)
+- Update variables.tf file with project name
+- cd ./terraform
+- terraform init
+- terraform plan
+- terraform apply
+- run terraform destroy at the end
+
+Mage
+1. cp dev.env .env
+2. Docker compose build then docker compose up
+- This will create a docker image called air-quality-analysis
+3. Navigate to localhost:6789 to access Mage
+
+
+
+Mage Steps:
+- Remove postgres from image
+- Ingest source data to Bucket
+- Use ingestion scripts to confirm schema and get rid of bad data
+
+
+DBT:
+- Setup: https://github.com/DataTalksClub/data-engineering-zoomcamp/blob/main/04-analytics-engineering/dbt_cloud_setup.md
+
+
+
+Thoughts:
+1. Terraform cloud resources
+2. Run Mage Pipeline
+3. Trigger dbt transformations
+4. Load Dashboard...
