@@ -25,17 +25,19 @@ I was able to source my data from the OpenAQ, a "nonprofit organization providin
 
 My final visualization includes a chart which visualizes categorical monthly averages of PM2.5 during rush hour and non-rush hour periods, a temporal chart which shows the variation of PM2.5 on a daily basis overtime, and a few widgets displaying overall average PM2.5, maximum PM2.5, and a table of the locations with their transit information. I believe this dashboard does a good job of representing the overall data and shows some interesting regional and temporal variations in PM2.5 data.
 
-<img width="465" alt="image" src="https://github.com/Wilson2214/air-quality-analysis/assets/39279731/acb11fff-24fb-47b0-a0c4-2a7931f99586">
+<img width="675" alt="image" src="https://github.com/Wilson2214/air-quality-analysis/assets/39279731/fd3df2a9-2cd2-4137-a494-cd850c0a2240">
 
 Additionally, I provided a drop-down filter to isolate an individual city to easily compare them. In particular you can compare a city with poor transit options like Riverside, CA to see that average rush hour PM2.5 is generally higher than non-rush hour PM2.5 versus a city like Washington, DC with better transit options which has a more uniform breakdown of PM2.5 between rush hour and non-rush hour. You will also see in this comparison that DC tends to have an overall lower PM2.5 which could be correlated to transit options.
 
 Riverside, CA:
 
-<img width="465" alt="image" src="https://github.com/Wilson2214/air-quality-analysis/assets/39279731/3fb0bfa1-4efa-4ae0-ad32-122c6ea4d308">
+<img width="675" alt="image" src="https://github.com/Wilson2214/air-quality-analysis/assets/39279731/ec8c472b-f3de-4254-b1dd-076cf5e92032">
+
 
 Washington, DC:
 
-<img width="465" alt="image" src="https://github.com/Wilson2214/air-quality-analysis/assets/39279731/ccc257fb-71c6-4a06-9099-42af5121996b">
+<img width="675" alt="image" src="https://github.com/Wilson2214/air-quality-analysis/assets/39279731/8f1b6aaf-8554-49ac-bb6f-396f63b366e3">
+
 
 
 # Data Infrastructure
