@@ -1,0 +1,11 @@
+version: 2
+
+sources:
+  - name: staging
+    database: air-quality-analysis-418420
+    schema: air_quality_dataset
+    tables:
+      - name: dallas
+      - name: dc
+      - name: nynj
+      - name: riverside
