@@ -1,0 +1,11 @@
+triggers:
+- envs: []
+  name: trigger_ingest_to_gcp
+  pipeline_uuid: extract_raw_to_gcp_and_big_query
+  schedule_interval: null
+  schedule_type: api
+  settings: {}
+  sla: null
+  start_time: 2024-03-27 14:18:00
+  status: active
+  variables: {}

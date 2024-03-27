@@ -7,7 +7,7 @@ def load_data_from_file(*args, **kwargs):
     
     # https://saturncloud.io/blog/how-to-read-multiple-csv-files-into-python-pandas-dataframe/
     # Get all files for year
-    csv_files = glob.glob('air-quality-analysis-mage/data/month=*/*.csv.gz')
+    csv_files = glob.glob('air-quality-analysis-mage/data/dallas-data/month=*/*.csv.gz')
 
     # Create baseline dataframe
     combined_df = pd.DataFrame()
