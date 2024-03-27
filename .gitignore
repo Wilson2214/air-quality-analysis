@@ -8,6 +8,7 @@ __pycache__/
 
 *.csv
 *.csv.gz
+!transit_ridership.csv
 
 # Distribution / packaging
 .Python

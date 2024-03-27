@@ -2,10 +2,12 @@ Pre-requisites
 - Docker Installed
 - Python Installed
 - git clone REPO..., cd into repo
+- AWS CLI configured for download
 
 Create Virtual Environment
 - python3 -m venv air-quality-venv
 - . air-quality-venv/bin/activate
+- cmd+shift+p to select venv in vscode
 
 GCloud
 - Create an account and a new project
@@ -22,23 +24,32 @@ Terraform (will create bucket for each city (4 in total) and the big query table
 - terraform apply
 - run terraform destroy at the end
 
+Extract Data to Local
+- Run python script to get data locally
+- python3 download_from_aws.py
+- NOTE: here is my main improvement for pipeline. AWS CLI is incompatible with Mage. In reality I would avoid downloading data from AWS then uploading to GCP in my pipeline, I would set up a process to perform a daily scrape with the API. As we are getting a year's worth of data the only optimal method is to perform a direct copy with AWS CLI
+
 Mage
 1. cp dev.env .env
 2. Docker compose build then docker compose up
 - This will create a docker image called air-quality-analysis
 3. Navigate to localhost:6789 to access Mage
-
-
-
-Mage Steps:
-- Remove postgres from image
-- Ingest source data to Bucket
-- Use ingestion scripts to confirm schema and get rid of bad data
-
+- You can do this if you want to monitor the pipeline
+- Next command will take a few minutes to run so you can either monitor the run under triggers or you can look at the GCP buckets you created and wait until they are populated (go to pipeline runs to monitor)
+4. Run pipeline with API trigger
+- curl -X POST http://localhost:6789/api/pipeline_schedules/1/pipeline_runs/86c9a0275c314fb68f719581db074389
+- wait for completion
+5. Run second pipeline with API trigger: this transforms data by selecting only np2.5 records and storing in bigquery
+- curl -X POST http://localhost:6789/api/pipeline_schedules/3/pipeline_runs/489b42910fd042479025facaf42d455d
+6. All Data now available in BiqQuery for DBT
 
 DBT:
 - Setup: https://github.com/DataTalksClub/data-engineering-zoomcamp/blob/main/04-analytics-engineering/dbt_cloud_setup.md
+- Will need to connect dbt cloud to bigquery by uploading my_creds.json and connecting repo
+- Then run full refresh to generate tables
 
+Connect to Looker
+- Build out chart
 
 
 Thoughts:
