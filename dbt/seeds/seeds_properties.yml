@@ -1,0 +1,7 @@
+version: 2
+
+seeds: 
+  - name: transit_ridership
+    config:
+      database: air-quality-analysis-418420
+      schema: air_quality_dataset
