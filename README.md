@@ -38,9 +38,20 @@ Washington, DC:
 
 <img width="675" alt="image" src="https://github.com/Wilson2214/air-quality-analysis/assets/39279731/8f1b6aaf-8554-49ac-bb6f-396f63b366e3">
 
+# Data Stack
 
+This project utilizes the resources from the 2024 Cohort of the Data Engineerin ZoomCamp [6]. 
 
-# Data Infrastructure
+**Scripting**: Python with some Shell Coding
+**Cloud Platform**: Google Cloud Platform (IAM, GCP Cloud Storage, Big Query DWH)
+**Containerization**: Docker
+**Infrastructure as Code**: Terraform
+**Batch Processing**: Python and Pandas, SQL
+**Workflow Orchestration**: Mage
+**ELT Transformation**: dbt
+**Visualization**: Google Looker Studio
+
+[NEED TO CREATE AND INSERT VISUAL DEPICTION HERE]
 
 # Reproducability
 
@@ -48,9 +59,21 @@ Washington, DC:
 
 # Improvements
 
+The most significant technical improvement I could have made was related to ingesting the initial dataset. Data was available from OpenAQ in a variety of methods including API, direct access to csv.gz files, and via the AWS CLI. Because I wanted to ingest a significant amount of data (1 year for four cities), I chose not to use the API. Additionally, direct access would be time consuming and require individual downloading of thousands of individual daily csvs. Problematically though, AWS CLI was incompatible with Mage, my orchestration tool. In reality I would avoid downloading data from AWS then uploading to GCP in my pipeline. I would likely set up a process to migrate the data from one system to the other, then perform a daily scrape with the API to get additional data. As we are getting a year's worth of data the only optimal method is to perform a direct copy with AWS CLI and do this outside of the orchestrator.
+
+Additionally, I could have expanded my dataset to include many more cities and longer periods of time. For this project I only selected one year of data, but much more data was available. I think this would benefit in exploring my hypothesis.
+
+Finally, there are some big changes I would make regarding the scientific nature of my study. In particular I would explore some of the other pollutants that OpenAQ provides data on. I would also want to incorporate more information about commute tendencies and try to further understand how increased road traffic during rush hour coincides with increases in PM2.5. Further, I would want to explore other sources of PM2.5 and try to determine why and when spikes occur. This project was focused on the technical nature of building a data pipeline though, so I did not explore these further.
+
 # References
 [1] https://www.sciencedirect.com/science/article/abs/pii/S0959652621033989
+
 [2] https://www.metro-magazine.com/10112565/best-and-worst-cities-for-commuting-on-public-transportation
+
 [3] https://openaq.org/
+
 [4] https://docs.openaq.org/docs/accessing-openaq-archive-data
+
 [5] https://auto.howstuffworks.com/air-pollution-from-cars.htm
+
+[6] https://github.com/DataTalksClub/data-engineering-zoomcamp
