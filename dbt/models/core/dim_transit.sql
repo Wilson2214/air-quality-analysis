@@ -1,4 +1,9 @@
-{{ config(materialized='table') }}
+{{
+    config(
+        materialized='table',
+        schema='air_quality_dataset'
+    )
+}}
 
 select 
     location_val,
