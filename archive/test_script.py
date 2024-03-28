@@ -1,3 +1,5 @@
+# Initial testing for creating a script to load data from local in mage
+
 import pandas as pd
 import numpy as np
 import datetime
