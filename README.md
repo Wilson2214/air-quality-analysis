@@ -38,7 +38,7 @@ Washington, DC:
 
 <img width="675" alt="image" src="https://github.com/Wilson2214/air-quality-analysis/assets/39279731/8f1b6aaf-8554-49ac-bb6f-396f63b366e3">
 
-[Link to Dashboard](https://lookerstudio.google.com/s/oetwCyQBWvc). Note: This relies on the underlying data structure which is destroyed with terrraform. Depending on when this link is selected, no data may be present.
+[Link to Dashboard](https://lookerstudio.google.com/s/oetwCyQBWvc). Note: This relies on the underlying data structure which is destroyed with terrraform. Depending on when this link is selected, no data may be present. I've additionally included a pdf of the main view of my dashboard [here](https://github.com/Wilson2214/air-quality-analysis/blob/main/Air_Quality_Analysis.pdf).
 
 # Data Stack
 
