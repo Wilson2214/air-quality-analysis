@@ -72,7 +72,7 @@ Additionally, I could have expanded my dataset to include many more cities and l
 
 Finally, there are some big changes I would make regarding the scientific nature of my study. In particular I would explore some of the other pollutants that OpenAQ provides data on. I would also want to incorporate more information about commute tendencies and try to further understand how increased road traffic during rush hour coincides with increases in PM2.5. Further, I would want to explore other sources of PM2.5 and try to determine why and when spikes occur. This project was focused on the technical nature of building a data pipeline though, so I did not explore these further.
 
-# Reproducability
+# Reproducibility
 
 The Steps below detail how you can create this project.
 
