@@ -44,7 +44,7 @@ Washington, DC:
 
 This project utilizes the resources from the 2024 Cohort of the Data Engineerin ZoomCamp [6]. 
 
-**Scripting**: Python with some Shell Coding
+**Scripting**: Python with some Shell Coding (AWS CLI)
 
 **Cloud Platform**: Google Cloud Platform (IAM, GCP Cloud Storage, Big Query DWH)
 
@@ -60,7 +60,9 @@ This project utilizes the resources from the 2024 Cohort of the Data Engineerin 
 
 **Visualization**: Google Looker Studio
 
-[NEED TO CREATE AND INSERT VISUAL DEPICTION HERE]
+<img width="825" alt="image" src="https://github.com/Wilson2214/air-quality-analysis/assets/39279731/f85a0109-63f5-4d85-bddb-2c93c0a954f2">
+
+Description: Data is ingested from source S3 bucket via a python script. Terraform is used to build GCP Bucket and BigQuery infrastructure. Docker is used to spin up a container with Mage. Mage is used to orchestrate python scripts to load data from local file to GCP bucket, then GCP bucket with schema transformations to BigQuery. dbt is then used to transform data within BigQuery to final tables which are used by Looker for visualization.
 
 # Reproducability
 
