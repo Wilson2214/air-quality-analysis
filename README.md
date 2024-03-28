@@ -64,6 +64,26 @@ This project utilizes the resources from the 2024 Cohort of the Data Engineerin 
 
 Description: Data is ingested from source S3 bucket via a python script. Terraform is used to build GCP Bucket and BigQuery infrastructure. Docker is used to spin up a container with Mage. Mage is used to orchestrate python scripts to load data from local file to GCP bucket, then GCP bucket with schema transformations to BigQuery. dbt is then used to transform data within BigQuery to final tables which are used by Looker for visualization.
 
+# Pipeline Views
+
+This section includes screenshots showing how the data moves through the ETL pipeline:
+
+1. Mage managed `extract_raw_to_gcp` pipeline
+
+<img width="1291" alt="image" src="https://github.com/Wilson2214/air-quality-analysis/assets/39279731/96919828-5632-40e7-8fb7-d4235d8b7eb4">
+
+2. Mage managed `gcs_to_bigquery` pipeline
+
+<img width="1290" alt="image" src="https://github.com/Wilson2214/air-quality-analysis/assets/39279731/fece7130-733c-4c48-9b82-84769156412b">
+
+3. dbt transformation pipeline
+
+<img width="1147" alt="image" src="https://github.com/Wilson2214/air-quality-analysis/assets/39279731/28026dc9-a256-408a-ac68-d9fd5e746472">
+
+4. dbt seed table
+
+<img width="565" alt="image" src="https://github.com/Wilson2214/air-quality-analysis/assets/39279731/9a07fd50-5aeb-45e7-bb76-9ab127c95c8c">
+
 # Improvements
 
 The most significant technical improvement I could have made was related to ingesting the initial dataset. Data was available from OpenAQ in a variety of methods including API, direct access to csv.gz files, and via the AWS CLI. Because I wanted to ingest a significant amount of data (1 year for four cities), I chose not to use the API. Additionally, direct access would be time consuming and require individual downloading of thousands of individual daily csvs. Problematically though, AWS CLI was incompatible with Mage, my orchestration tool. In reality I would avoid downloading data from AWS then uploading to GCP in my pipeline. I would likely set up a process to migrate the data from one system to the other, then perform a daily scrape with the API to get additional data. As we are getting a year's worth of data the only optimal method is to perform a direct copy with AWS CLI and do this outside of the orchestrator.
