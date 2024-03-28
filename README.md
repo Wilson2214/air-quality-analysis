@@ -38,17 +38,26 @@ Washington, DC:
 
 <img width="675" alt="image" src="https://github.com/Wilson2214/air-quality-analysis/assets/39279731/8f1b6aaf-8554-49ac-bb6f-396f63b366e3">
 
+[Link to Dashboard](https://lookerstudio.google.com/s/oetwCyQBWvc). Note: This relies on the underlying data structure which is destroyed with terrraform. Depending on when this link is selected, no data may be present.
+
 # Data Stack
 
 This project utilizes the resources from the 2024 Cohort of the Data Engineerin ZoomCamp [6]. 
 
 **Scripting**: Python with some Shell Coding
+
 **Cloud Platform**: Google Cloud Platform (IAM, GCP Cloud Storage, Big Query DWH)
+
 **Containerization**: Docker
+
 **Infrastructure as Code**: Terraform
+
 **Batch Processing**: Python and Pandas, SQL
+
 **Workflow Orchestration**: Mage
+
 **ELT Transformation**: dbt
+
 **Visualization**: Google Looker Studio
 
 [NEED TO CREATE AND INSERT VISUAL DEPICTION HERE]
